@@ -1,7 +1,7 @@
 @echo off
 :: Variables
-set REPO_URL=https://github.com/JorgeManuelManzanoA/K5.git
-set REPO_DIR=K5
+set REPO_URL=https://github.com/JorgeManuelManzanoA/Kanban.git
+set REPO_DIR=Kanban
 set PRIVATE_IP=%1
 set PUBLIC_IP=%2
 if "%PRIVATE_IP%"=="" set PRIVATE_IP=127.0.0.1

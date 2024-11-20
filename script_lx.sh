@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Variables
-REPO_URL="https://github.com/JorgeManuelManzanoA/K5.git"
-REPO_DIR="K5"
-PRIVATE_IP=${1:-"127.31.17.38"} # IP privada para Docker Swarm
+REPO_URL="https://github.com/JorgeManuelManzanoA/Kanban.git"
+REPO_DIR="Kanban"
+PRIVATE_IP=${1:-"127.0.0.1"} # IP privada para Docker Swarm
 PUBLIC_IP=${2:-"localhost"}  # IP pública para la URL de la aplicación
 STACK_NAME="tesis"
 NETWORK_NAME="app-network"
