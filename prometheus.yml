@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 15s # Intervalo para recopilar métricas
+
+scrape_configs:
+  - job_name: 'nginx'
+    static_configs:
+      - targets: ['nginx-proxy:8080'] # Monitoriza Nginx
+
+  - job_name: 'backend'
+    static_configs:
+      - targets: ['backend-app:3000'] # Monitoriza el backend
+
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis-exporter:9121'] # Monitoriza Redis

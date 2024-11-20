@@ -1,0 +1,56 @@
+<!-- src/app/login/login.component.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+            <div class="logo-container">
+                <img src="/assets/icons/TECSUP CYAN.png" alt="Tecsup logo" class="logo">
+            </div>
+            <h2>Inicia sesión</h2>
+            
+            <!-- Campo de Correo Electrónico -->
+            <input 
+                type="email" 
+                placeholder="Correo electrónico" 
+                required 
+                aria-label="Correo electrónico" 
+                name="email"
+                [(ngModel)]="username"
+                pattern="^[a-zA-Z0-9._%+-]+@tecsup\.edu\.pe$"
+                #email="ngModel"
+            >
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="error">
+              <span *ngIf="email.errors?.['required']">El correo es obligatorio.</span>
+              <span *ngIf="email.errors?.['pattern']">Debe ser un correo de Tecsup (tecsup.edu.pe).</span>
+              
+            </div>
+            
+            <!-- Campo de Contraseña -->
+            <input 
+                type="password" 
+                placeholder="Contraseña" 
+                required 
+                aria-label="Contraseña" 
+                name="password"
+                [(ngModel)]="password"
+                #passwordField="ngModel"
+            >
+            <div *ngIf="passwordField.invalid && (passwordField.dirty || passwordField.touched)" class="error">
+              <span *ngIf="passwordField.errors?.['required']">La contraseña es obligatoria.</span>
+            </div>
+            
+            <!-- Botón de Envío -->
+            <button type="submit" [disabled]="loginForm.invalid">Iniciar sesión</button>
+            
+
+        </form>
+    </div>
+</body>
+</html>

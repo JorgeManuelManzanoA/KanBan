@@ -1,0 +1,114 @@
+<div class="search-create-container">
+  <input
+    type="text"
+    placeholder="Buscar por nombre"
+    [(ngModel)]="searchTerm"
+    (input)="buscarUsuarios()"
+    class="input-busqueda"
+  />
+  <div class="button-group">
+    <button class="btn-crear" (click)="openCreateUserModal()">+ Crear</button>
+    <button class="btn-exportar" (click)="exportarUsuarios()">Exportar Usuarios</button>
+  </div>
+</div>
+
+<div class="tabla-container">
+  <table class="tabla-usuarios" *ngIf="filteredUsuarios.length > 0; else noResults">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Contraseña</th>
+        <th>Carrera</th>
+        <th>Ciclo</th>
+        <th>Sección</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of filteredUsuarios">
+        <td>{{ usuario.nombre }}</td>
+        <td>{{ usuario.correo }}</td>
+        <td>{{ usuario.contrasena }}</td>
+        <td>{{ usuario.carrera }}</td>
+        <td>{{ usuario.ciclo }}</td>
+        <td>{{ usuario.seccion }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noResults>
+    <p class="no-results">No se encontraron coincidencias.</p>
+  </ng-template>
+</div>
+
+<div *ngIf="showCreateUserModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Crear Usuario</h3>
+      <button type="button" class="btn-importar" (click)="fileInput.click()">Importar Usuarios</button>
+      <input type="file" (change)="onFileChange($event)" accept=".xlsx, .xls" style="display: none;" #fileInput />
+    </div>
+
+    <form (ngSubmit)="registerUser()">
+      <label for="nombre">Nombres y Apellidos</label>
+      <input type="text" id="nombre" [(ngModel)]="newUser.nombre" name="nombre" required />
+
+      <label for="correo">Correo</label>
+      <input type="email" id="correo" [(ngModel)]="newUser.correo" name="correo" required />
+
+      <label for="contrasena">Contraseña</label>
+      <input type="password" id="contrasena" [(ngModel)]="newUser.contrasena" name="contrasena" required />
+
+      <label for="carrera">Carrera</label>
+      <input type="text" id="carrera" [(ngModel)]="newUser.carrera" name="carrera" required />
+
+      <label for="ciclo">Ciclo</label>
+      <input type="text" id="ciclo" [(ngModel)]="newUser.ciclo" name="ciclo" required />
+
+      <label for="seccion">Sección</label>
+      <input type="text" id="seccion" [(ngModel)]="newUser.seccion" name="seccion" required />
+
+      <div class="modal-footer">
+        <button type="submit" class="btn-guardar">Guardar</button>
+        <button type="button" class="btn-cancelar" (click)="closeCreateUserModal()">Cancelar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal de vista previa -->
+<div *ngIf="showPreviewModal" class="modal">
+  <div class="preview-modal-content">
+    <h3>Vista Previa de Importación</h3>
+    <div class="preview-content-container">
+      <div class="tabla-preview-wrapper">
+        <table class="tabla-preview">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Correo</th>
+              <th>Contraseña</th>
+              <th>Carrera</th>
+              <th>Ciclo</th>
+              <th>Sección</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of previewData">
+              <td>{{ usuario.nombre }}</td>
+              <td>{{ usuario.correo }}</td>
+              <td>{{ usuario.contrasena }}</td>
+              <td>{{ usuario.carrera }}</td>
+              <td>{{ usuario.ciclo }}</td>
+              <td>{{ usuario.seccion }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button (click)="confirmarImportacion()" class="btn-confirmar">Confirmar Importación</button>
+      <button (click)="cancelarImportacion()" class="btn-cancelar">Cancelar</button>
+    </div>
+  </div>
+</div>

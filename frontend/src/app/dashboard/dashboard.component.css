@@ -1,0 +1,149 @@
+/* Estilos generales del contenedor del dashboard */
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f4f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Menú lateral */
+  .sidebar {
+    width: 170px;
+    background-color: #2c3e50;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 2px 0 10px #1a1f25;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .sidebar-header .logo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+  
+  /* Organización del contenido del menú */
+  .menu-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .menu-top {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu-bottom {
+    list-style-type: none;
+    padding: 0;
+    margin-top: auto;
+  }
+  
+  .menu-top li, .menu-bottom li {
+    margin: 15px 0;
+  }
+  
+  .menu-top li a, .menu-bottom li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-top li a:hover, .menu-bottom li a:hover {
+    color: #1abc9c;
+  }
+  
+  .menu-top li a i, .menu-bottom li a i {
+    margin-right: 10px;
+  }
+  
+  /* Contenedor principal */
+  .main-content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  /* Encabezado del dashboard */
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50f8;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .header-info h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  .header-info p {
+    margin: 5px 0 0;
+  }
+  
+  .header-avatar .user-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  
+  /* Tarjetas del dashboard */
+  .dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    text-align: center;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h3 {
+    margin: 10px 0 10px;
+    font-size: 1.5rem;
+    color: #2c3e50;
+  }
+  
+  .card p {
+    margin: 0;
+    font-size: 1rem;
+    color: #7f8c8d;
+  }
+  
+  /* Iconos dentro de las tarjetas */
+  .card i {
+    font-size: 2.5rem;
+    color: #3498db;
+    margin-bottom: 10px;
+  }
+  

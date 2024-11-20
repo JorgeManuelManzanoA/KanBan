@@ -1,0 +1,63 @@
+<!-- doc jefe (rol 1) -->
+<div *ngIf="userRole === 1">
+  <div class="dashboard-cards">
+    <div class="card">
+      <i class="fas fa-chart-line"></i>
+      <h3>Reportes</h3>
+      <p>Accede a todos los reportes de tus docentes.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-calendar-alt"></i>
+      <h3>Gestión de Proyectos</h3>
+      <p>Gestiona todos los proyectos.</p>
+    </div>
+  </div>
+</div>
+
+<!-- doc normal (rol 2) -->
+<div *ngIf="userRole === 2">
+  <div class="dashboard-cards">
+    <div class="card">
+      <i class="fas fa-chalkboard-teacher"></i>
+      <h3>Mis Clases</h3>
+      <p>Accede a las clases que gestionas.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-tasks"></i>
+      <h3>Progreso de Alumnos</h3>
+      <p>Revisa el progreso de los alumnos.</p>
+    </div>
+  </div>
+</div>
+
+<!-- alu lider (rol 3) -->
+<div *ngIf="userRole === 3">
+  <div class="dashboard-cards">
+    <div class="card">
+      <i class="fas fa-users"></i>
+      <h3>Grupo de Estudio</h3>
+      <p>Gestiona las actividades del grupo.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-chart-bar"></i>
+      <h3>Desempeño del Equipo</h3>
+      <p>Monitorea el desempeño de tu equipo.</p>
+    </div>
+  </div>
+</div>
+
+<!-- alu normal (rol 4) -->
+<div *ngIf="userRole === 4">
+  <div class="dashboard-cards">
+    <div class="card">
+      <i class="fas fa-book"></i>
+      <h3>Mis Clases</h3>
+      <p>Accede a tus clases y actividades.</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-graduation-cap"></i>
+      <h3>Desempeño</h3>
+      <p>Revisa tu progreso y desempeño.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="dashboard-container">
+  <!-- Menú Lateral -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <img src="/assets/icons/kanban.png" alt="Logo" class="logo" />
+      <h2>Kanban</h2>
+    </div>
+    <div class="menu-content">
+      <ul class="menu-top">
+        <!-- Todos-->
+        <li>
+          <a routerLink="/dashboard"><i class="fas fa-home"></i> Inicio</a>
+        </li>
+
+        <!-- roles 1 y 2: doc jefe y doc normal -->
+        <li *ngIf="userRole === 1 || userRole === 2">
+          <a routerLink="/dashboard/proyectos"><i class="fas fa-project-diagram"></i> Proyectos</a>
+        </li>
+
+        <!-- roles 1 y 3: doc jefe y alu lider -->
+        <li *ngIf="userRole === 1 || userRole === 3">
+          <a routerLink="/dashboard/usuarios"><i class="fas fa-users"></i> Usuarios</a>
+        </li>
+      </ul>
+
+      <ul class="menu-bottom">
+        <!-- Todos -->
+        <li>
+          <a routerLink="/dashboard/perfil"><i class="fas fa-user"></i> Perfil</a>
+        </li>
+
+        <!-- roles 1 y 2: doc jefe y doc normal -->
+        <li *ngIf="userRole === 1 || userRole === 2">
+          <a routerLink="/dashboard/configuracion"><i class="fas fa-cog"></i> Configuración</a>
+        </li>
+
+        <!-- Todos -->
+        <li>
+          <a routerLink="/dashboard/logout"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <div class="main-content">
+    <header class="dashboard-header">
+      <div class="header-info">
+        <h1>Dashboard</h1>
+        <p>Bienvenido, {{ getRoleDescription(userRole) }}</p>
+      </div>
+      <div class="header-avatar">
+        <img src="/assets/icons/kanban.png" alt="Usuario" class="user-avatar" />
+      </div>
+    </header>
+    <section class="dashboard-info">
+      <router-outlet></router-outlet>
+    </section>
+  </div>
+</div>

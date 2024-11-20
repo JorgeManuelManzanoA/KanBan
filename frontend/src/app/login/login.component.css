@@ -1,0 +1,152 @@
+html, body {
+    font-family: Arial, sans-serif; 
+    font-weight: bold; 
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    background-color: #0f1419;
+}
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 0.5s ease-out;
+}
+
+
+.login-form {
+    background-color: #1a1f25;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideUp 0.5s ease-out;
+}
+
+.error {
+    color: #fff;
+    font-size: 0.8em;
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+    animation: logoEntrance 1s ease-out;
+}
+
+h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+input {
+    width: 93.7%;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #2c3640;
+    border-radius: 4px;
+    background-color: #1a1f25;
+    color: white;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00b4d8;
+}
+
+button {
+    width: 100%;
+    background-color: #00b4d8;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background-color: #0096c7;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+.register-link {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.register-link a {
+    color: #00b4d8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+    color: #0096c7;
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logoEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form {
+        padding: 1.5rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    input, button {
+        font-size: 0.9rem;
+    }
+}
