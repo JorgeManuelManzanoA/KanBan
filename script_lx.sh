@@ -4,7 +4,7 @@
 REPO_URL="https://github.com/JorgeManuelManzanoA/Kanban.git"
 REPO_DIR="Kanban"
 PRIVATE_IP=${1:-"127.0.0.1"} # IP privada para Docker Swarm
-PUBLIC_IP=${2:-"localhost"}  # IP pública para la URL de la aplicación
+PUBLIC_IP=${2:-"98.84.100.221"}  # IP pública para la URL de la aplicación
 STACK_NAME="tesis"
 NETWORK_NAME="app-network"
 
